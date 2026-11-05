@@ -1,0 +1,3 @@
+{"id":"example-1","audio_path":"example-1.wav","question":"When does the bell ring?","timestamp":"1s~3s;5s~7s","task_tag":"acoustic event","multi_target":true}
+{"id":"example-2","audio_path":"example-2.wav","question":"When is the word hello spoken?","timestamp":"2s~3s","task_tag":"word","multi_target":false}
+{"id":"example-3","audio_path":"example-3.wav","question":"When does the speaker sound surprised?","timestamp":"4s~6s","task_tag":"emotion","multi_target":false}

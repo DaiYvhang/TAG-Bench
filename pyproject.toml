@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tagbench"
+version = "0.1.0"
+description = "Reproducible temporal audio grounding evaluation for TAG-Bench"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.scripts]
+tagbench = "tagbench.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tagbench*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
