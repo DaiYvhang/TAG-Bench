@@ -10,7 +10,7 @@ Yuhang Dai<sup>†</sup> · Xin Shu<sup>†</sup> · Zengxi Li · Lei Xie · Xia
 **Alibaba Token Foundry**  
 <sup>†</sup> 同等贡献
 
-[📄 论文](https://arxiv.org/abs/2609.01542v2) · [🎧 音频示例](#音频示例) · [📊 实验结果](#实验结果) · [🚀 快速开始](#快速开始) · [English](README.md)
+[📄 论文](https://arxiv.org/abs/2609.01542v2) · [🎧 音频示例](https://aslp-lab.github.io/TAG-Bench.github.io/) · [📊 实验结果](#实验结果) · [🚀 快速开始](#快速开始) · [English](README.md)
 
 </div>
 
@@ -133,6 +133,7 @@ python -m http.server 8000 --directory docs
 ```
 
 打开 **http://localhost:8000** 后选择示例。展示使用已保存的预测结果，全部交互在浏览器内运行。
+我们提供的demo page，链接为：https://aslp-lab.github.io/TAG-Bench.github.io/
 
 ## 快速开始
 

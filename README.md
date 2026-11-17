@@ -10,7 +10,7 @@ Yuhang Dai<sup>†</sup> · Xin Shu<sup>†</sup> · Zengxi Li · Lei Xie · Xia
 **Alibaba Token Foundry**  
 <sup>†</sup> Equal contribution
 
-[📄 Paper](https://arxiv.org/abs/2609.01542v2) · [🎧 Audio Demos](#audio-demos) · [📊 Results](#results) · [🚀 Quick Start](#quick-start) · [中文](README_zh.md)
+[📄 Paper](https://arxiv.org/abs/2609.01542v2) · [🎧 Audio Demos](https://aslp-lab.github.io/TAG-Bench.github.io/) · [📊 Results](#results) · [🚀 Quick Start](#quick-start) · [中文](README_zh.md)
 
 </div>
 
@@ -134,6 +134,7 @@ python -m http.server 8000 --directory docs
 
 Open **http://localhost:8000** and select an example. The demos use saved predictions and run entirely in the browser.
 
+The link of our demo page is：https://aslp-lab.github.io/TAG-Bench.github.io/
 ## Quick Start
 
 The evaluation toolkit requires **Python 3.10+** and has no runtime dependencies. From the repository root, run the included format example:
