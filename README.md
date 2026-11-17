@@ -7,10 +7,12 @@
 **Hearing what. Knowing when.**
 
 Yuhang Dai<sup>†</sup> · Xin Shu<sup>†</sup> · Zengxi Li · Lei Xie · Xiangang Li · Jianwei Yu  
+
 **Alibaba Token Foundry**  
+
 <sup>†</sup> Equal contribution
 
-[📄 Paper](https://arxiv.org/abs/2609.01542v2) · [🎧 Audio Demos](https://aslp-lab.github.io/TAG-Bench.github.io/) · [📊 Results](#results) · [🚀 Quick Start](#quick-start) · [中文](README_zh.md)
+[📄 Paper](https://arxiv.org/abs/2609.01542v2) · [📦 Dataset](https://modelscope.cn/datasets/yhdai666/TAG-Bench) · [🎧 Audio Demos](https://aslp-lab.github.io/TAG-Bench.github.io/) · [📊 Results](#results) · [🚀 Quick Start](#quick-start) · [中文](README_zh.md)
 
 </div>
 
@@ -25,7 +27,9 @@ We introduce **TAG-Bench**, a benchmark for temporal audio grounding. Given an a
 | **1,750** | **149.5 hours** | **8** | **21** | **22.1%** |
 
 <p align="center">
+
   <img src="docs/assets/figures/task-overview.png" alt="TAG-Bench task: locate a single occurrence or all repeated occurrences of a queried event in audio." width="960">
+
 </p>
 
 *Temporal audio grounding requires both accurate boundaries and complete recovery of matching occurrences. Single-target and multi-target queries share the same timestamp output format.*
@@ -33,9 +37,13 @@ We introduce **TAG-Bench**, a benchmark for temporal audio grounding. Given an a
 ## Highlights
 
 - **Diverse grounding queries.** Eight subsets cover word-level localization, acoustic events and descriptions, semantics, underspecified semantic queries, emotion, and two long-audio settings.
+
 - **Long-form audio.** Recordings extend to **20 minutes**, testing localization across a broad range of audio durations.
+
 - **Every occurrence matters.** **387 queries** contain multiple target intervals, with up to **18 occurrences** in a single query.
+
 - **A common evaluation protocol.** We compare **21 systems** using interval overlap, strict localization recall, occurrence counts, and output-format reliability.
+
 - **Human-verified annotations.** Automatic candidate generation is followed by human refinement and quality control.
 
 ## Benchmark
@@ -59,7 +67,9 @@ TAG-Bench contains six short-audio subsets and two long-audio subsets. Each quer
 Our construction pipeline combines source collection and formatting, automatic pre-annotation, and human annotation with quality control. Annotators refine candidate intervals using waveform and spectrogram views, followed by cross-validation, agreement screening, and boundary review.
 
 <p align="center">
+
   <img src="docs/assets/figures/construction-pipeline.jpg" alt="TAG-Bench construction pipeline: sourcing and formatting, automatic pre-annotation, and human annotation with quality control." width="1100">
+
 </p>
 
 The subsets differ in source composition as well as query type and duration. Cross-subset results provide diagnostic comparisons rather than controlled estimates of any single factor.
@@ -99,8 +109,11 @@ All values are percentages. One-to-one and one-to-many report mIoU on single-tar
 ### Key findings
 
 - **Precise localization remains difficult.** FireRedAudio leads overall with **31.2 mIoU**, but only **21.5%** of its answers reach IoU ≥ 0.7.
+
 - **Long audio remains challenging.** FireRedAudio achieves **20.6 / 21.7 mIoU** on long semantic / long acoustic-description queries and is the only evaluated system above 20 on both subsets.
+
 - **Models miss repeated occurrences.** Every evaluated system under-reports occurrences on multi-target queries. The highest count accuracy is **13.2%**, achieved by Step-Audio-R1.
+
 - **Output reliability is a separate dimension.** Parsing failures count as misses for overlap and count metrics. Midpoint MAE is reported together with coverage so that conditional error can be interpreted correctly.
 
 ### Evaluation metrics
@@ -135,9 +148,42 @@ python -m http.server 8000 --directory docs
 Open **http://localhost:8000** and select an example. The demos use saved predictions and run entirely in the browser.
 
 The link of our demo page is：https://aslp-lab.github.io/TAG-Bench.github.io/
+
 ## Quick Start
 
-The evaluation toolkit requires **Python 3.10+** and has no runtime dependencies. From the repository root, run the included format example:
+### Download the dataset
+
+TAG-Bench is available on [ModelScope](https://modelscope.cn/datasets/yhdai666/TAG-Bench). Install the download client:
+
+```bash
+python -m pip install -U modelscope
+```
+
+Download the dataset to `./data/TAG-Bench`:
+
+```bash
+modelscope download \
+  --dataset yhdai666/TAG-Bench \
+  --local_dir ./data/TAG-Bench
+```
+
+Alternatively, download it with Python:
+
+```python
+from modelscope.hub.snapshot_download import dataset_snapshot_download
+
+dataset_dir = dataset_snapshot_download(
+    dataset_id="yhdai666/TAG-Bench",
+    local_dir="./data/TAG-Bench",
+)
+print(f"Dataset downloaded to: {dataset_dir}")
+```
+
+Choose either method. Both save the dataset files to `./data/TAG-Bench`; change `local_dir` (or `--local_dir`) to use a different location. Point your data-loading or inference script to this directory.
+
+### Run the format example
+
+The evaluation toolkit itself requires **Python 3.10+** and has no third-party runtime dependencies. From the repository root, run the included format example:
 
 ```bash
 python -m tagbench run \

@@ -10,7 +10,7 @@ Yuhang Dai<sup>†</sup> · Xin Shu<sup>†</sup> · Zengxi Li · Lei Xie · Xia
 **Alibaba Token Foundry**  
 <sup>†</sup> 同等贡献
 
-[📄 论文](https://arxiv.org/abs/2609.01542v2) · [🎧 音频示例](https://aslp-lab.github.io/TAG-Bench.github.io/) · [📊 实验结果](#实验结果) · [🚀 快速开始](#快速开始) · [English](README.md)
+[📄 论文](https://arxiv.org/abs/2609.01542v2) · [📦 数据集](https://modelscope.cn/datasets/yhdai666/TAG-Bench) · [🎧 音频示例](https://aslp-lab.github.io/TAG-Bench.github.io/) · [📊 实验结果](#实验结果) · [🚀 快速开始](#快速开始) · [English](README.md)
 
 </div>
 
@@ -133,11 +133,46 @@ python -m http.server 8000 --directory docs
 ```
 
 打开 **http://localhost:8000** 后选择示例。展示使用已保存的预测结果，全部交互在浏览器内运行。
-我们提供的demo page，链接为：https://aslp-lab.github.io/TAG-Bench.github.io/
+
+在线演示：[TAG-Bench Demo](https://aslp-lab.github.io/TAG-Bench.github.io/)。
 
 ## 快速开始
 
-评测工具需要 **Python 3.10+**，无运行时第三方依赖。在项目根目录运行随附的格式示例：
+### 下载数据集
+
+TAG-Bench 已发布至 [ModelScope](https://modelscope.cn/datasets/yhdai666/TAG-Bench)。首先安装下载工具：
+
+```bash
+python -m pip install -U modelscope
+```
+
+**方式一：命令行下载**
+
+将数据集下载至 `./data/TAG-Bench`：
+
+```bash
+modelscope download \
+  --dataset yhdai666/TAG-Bench \
+  --local_dir ./data/TAG-Bench
+```
+
+**方式二：Python 下载**
+
+```python
+from modelscope.hub.snapshot_download import dataset_snapshot_download
+
+dataset_dir = dataset_snapshot_download(
+    dataset_id="yhdai666/TAG-Bench",
+    local_dir="./data/TAG-Bench",
+)
+print(f"数据集已下载至：{dataset_dir}")
+```
+
+以上两种方式任选一种即可。下载完成后，将数据读取或推理脚本中的数据集路径设置为 `./data/TAG-Bench`。如需更换保存位置，修改 `--local_dir` 或 Python 中的 `local_dir` 参数。
+
+### 运行格式示例
+
+评测工具本身需要 **Python 3.10+**，无运行时第三方依赖。在项目根目录运行随附的格式示例：
 
 ```bash
 python -m tagbench run \
