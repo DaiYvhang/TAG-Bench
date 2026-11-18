@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/assets/figures/TAG-Bench-logo.png" alt="TAG-Bench Logo" width="600">
+
 # TAG-Bench
 
 ### 面向大型音频语言模型的时间定位评测基准
