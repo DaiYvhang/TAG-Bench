@@ -10,8 +10,6 @@
 
 Yuhang Dai<sup>†</sup> · Xin Shu<sup>†</sup> · Zengxi Li · Lei Xie · Xiangang Li · Jianwei Yu  
 
-**Alibaba Token Foundry**  
-
 <sup>†</sup> Equal contribution
 
 [📄 Paper](https://arxiv.org/abs/2609.01542v2) · [📦 Dataset](https://modelscope.cn/datasets/yhdai666/TAG-Bench) · [🎧 Audio Demos](https://aslp-lab.github.io/TAG-Bench.github.io/) · [📊 Results](#results) · [🚀 Quick Start](#quick-start) · [中文](README_zh.md)

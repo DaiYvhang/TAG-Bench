@@ -9,7 +9,7 @@
 **听懂发生了什么，定位发生在何时。**
 
 Yuhang Dai<sup>†</sup> · Xin Shu<sup>†</sup> · Zengxi Li · Lei Xie · Xiangang Li · Jianwei Yu  
-**Alibaba Token Foundry**  
+
 <sup>†</sup> 同等贡献
 
 [📄 论文](https://arxiv.org/abs/2609.01542v2) · [📦 数据集](https://modelscope.cn/datasets/yhdai666/TAG-Bench) · [🎧 音频示例](https://aslp-lab.github.io/TAG-Bench.github.io/) · [📊 实验结果](#实验结果) · [🚀 快速开始](#快速开始) · [English](README.md)
