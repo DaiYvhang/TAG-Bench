@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/figures/TAG-Bench-logo.png" alt="TAG-Bench Logo" width="700">
+<img src="docs/assets/figures/TAG-Bench-logo.png" alt="TAG-Bench Logo" width="600">
 
 # TAG-Bench
 
